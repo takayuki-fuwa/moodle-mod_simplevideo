@@ -46,7 +46,6 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-// Modify capabilities as needed and remove this comment.
 $capabilities = array(
     'mod/simplevideo:addinstance' => array(
         'riskbitmask' => RISK_XSS,
@@ -58,7 +57,6 @@ $capabilities = array(
         ),
         'clonepermissionsfrom' => 'moodle/course:manageactivities'
     ),
-
     'mod/simplevideo:view' => array(
         'captype' => 'read',
         'contextlevel' => CONTEXT_MODULE,
@@ -70,13 +68,12 @@ $capabilities = array(
             'manager' => CAP_ALLOW
         )
     ),
-
-    'mod/simplevideo:submit' => array(
+    'mod/urlvideo:submit' => array(
         'riskbitmask' => RISK_SPAM,
         'captype' => 'write',
         'contextlevel' => CONTEXT_MODULE,
         'legacy' => array(
             'student' => CAP_ALLOW
         )
-    ),
+    )
 );

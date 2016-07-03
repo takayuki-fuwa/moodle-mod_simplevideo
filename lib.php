@@ -31,9 +31,6 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-/**
- * Example constant, you probably want to remove this :-)
- */
 define('simplevideo_ULTIMATE_ANSWER', 42);
 
 /* Moodle core API */
@@ -79,8 +76,6 @@ function simplevideo_add_instance(stdClass $simplevideo, mod_simplevideo_mod_for
 
     $simplevideo->timecreated = time();
 
-    // You may have to add extra stuff in here.
-
     $simplevideo->id = $DB->insert_record('simplevideo', $simplevideo);
 
     simplevideo_grade_item_update($simplevideo);
@@ -105,8 +100,6 @@ function simplevideo_update_instance(stdClass $simplevideo, mod_simplevideo_mod_
     $simplevideo->timemodified = time();
     $simplevideo->id = $simplevideo->instance;
 
-    // You may have to add extra stuff in here.
-
     $result = $DB->update_record('simplevideo', $simplevideo);
 
     simplevideo_grade_item_update($simplevideo);
@@ -130,8 +123,6 @@ function simplevideo_delete_instance($id) {
     if (! $simplevideo = $DB->get_record('simplevideo', array('id' => $id))) {
         return false;
     }
-
-    // Delete any dependent records here.
 
     $DB->delete_records('simplevideo', array('id' => $simplevideo->id));
 
@@ -232,7 +223,7 @@ function simplevideo_print_recent_mod_activity($activity, $courseid, $detail, $m
  * @return boolean
  */
 function simplevideo_cron () {
-    return true;
+    return false;
 }
 
 /**

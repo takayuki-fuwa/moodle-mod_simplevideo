@@ -61,6 +61,10 @@ $event->trigger();
 $PAGE->set_url('/mod/simplevideo/view.php', ['id' => $cm->id]);
 $PAGE->set_title(format_string($instance->name));
 $PAGE->set_heading(format_string($course->fullname));
+$PAGE->requires->css(new \moodle_url("css/video-js.min.css"));
+$PAGE->requires->js(new \moodle_url("js/video.min.js"), true);
+$PAGE->requires->js(new \moodle_url("js/videojs-contrib-hls.min.js"), true);
+$PAGE->requires->js(new \moodle_url("js/video_main.js"));
 
 echo $OUTPUT->header();
 
@@ -71,16 +75,26 @@ echo html_writer::start_div("container");
 echo html_writer::start_div("row");
 
 //説明文を表示させる(設定されている場合のみ)
-echo html_writer::start_div("span4 well");
 if ($instance->intro) {
+    echo html_writer::start_div("span4 well");
     echo html_writer::tag("p", $instance->intro);
+    //.col-md-4
+    echo html_writer::end_div();
 }
-//.col-md-4
-echo html_writer::end_div();
 
 //動画プレーヤーを表示させる。
+$videotag_params = [
+    "id" => "simplevideo_player",
+    "class" => "video-js vjs-default-skin vjs-big-play-centered",
+    "controls preload" => "auto",
+    "width" => "640",
+    "height" => "264",
+    "data-setup" => '{
+        "playbackRates": [0.5, 1, 1.5, 2]
+    }'
+];
 echo html_writer::start_div("span7 well");
-echo html_writer::video(new \moodle_url($instance->url),[]);
+echo html_writer::video(new \moodle_url($instance->url), $videotag_params);
 echo html_writer::end_div();
 
 //.row
