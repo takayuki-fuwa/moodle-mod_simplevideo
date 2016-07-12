@@ -37,4 +37,11 @@ $string['simplevideoname'] = 'simplevideo name';
 $string['simplevideoname_help'] = 'This is the content of the help tooltip associated with the simplevideoname field. Markdown syntax is supported.';
 $string['simplevideo'] = 'simplevideo';
 $string['pluginadministration'] = 'simplevideo administration';
+
+$string['enable_autoload'] = '自動的に動画を再生させる';
+$string['enable_autoload_help'] = '生徒がページを開いたら動画が自動的に再生されるようにします。';
+
+$string['enable_controler'] = 'シークバーを表示させる';
+$string['enable_controler_help'] = 'シークバーを表示させるか設定できます';
+
 $string['pluginname'] = 'simplevideo';

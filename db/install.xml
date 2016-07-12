@@ -15,6 +15,10 @@
                        COMMENT="General introduction of the simplevideo activity"/>
                 <FIELD NAME="introformat" TYPE="int" LENGTH="4" NOTNULL="true" UNSIGNED="true" DEFAULT="0"
                        SEQUENCE="false" COMMENT="Format of the intro field (MOODLE, HTML, MARKDOWN...)"/>
+                <FIELD NAME="enable_autoload" TYPE="int" LENGTH="1" NOTNULL="true" UNSIGNED="true" DEFAULT="0"
+                       SEQUENCE="false" COMMENT="autoload"/>
+                <FIELD NAME="enable_controler" TYPE="int" LENGTH="1" NOTNULL="true" UNSIGNED="true" DEFAULT="1"
+                       SEQUENCE="false" COMMENT="autoload"/>
                 <FIELD NAME="url" SEQUENCE="false" TYPE="text" LENGTH="512" NOTNULL="true"/>
                 <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false"/>
                 <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0"

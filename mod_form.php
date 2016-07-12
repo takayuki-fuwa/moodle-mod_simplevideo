@@ -68,6 +68,12 @@ class mod_simplevideo_mod_form extends moodleform_mod
         $mform->addRule('url', get_string('maximumchars', '', 512), 'maxlength', 512, 'client');
         $mform->addHelpButton('name', 'simplevideoname', 'simplevideo');
 
+        $mform->addElement('advcheckbox', 'enable_autoload', get_string('enable_autoload', "simplevideo"));
+        $mform->addHelpButton('enable_autoload', 'enable_autoload', "simplevideo");
+
+        $mform->addElement('advcheckbox', 'enable_controler', get_string('enable_controler', "simplevideo"));
+        $mform->addHelpButton('enable_controler', 'enable_controler', "simplevideo");
+
         // Adding the standard "intro" and "introformat" fields.
         if ($CFG->branch >= 29) {
             $this->standard_intro_elements();

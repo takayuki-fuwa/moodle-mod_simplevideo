@@ -36,5 +36,13 @@ $string['simplevideofieldset'] = 'Custom example fieldset';
 $string['simplevideoname'] = 'シンプル動画プレーヤー';
 $string['simplevideoname_help'] = 'ストリーミング動画を再生させることができます。';
 $string['simplevideo'] = 'シンプル動画プレーヤー';
+
 $string['pluginadministration'] = 'シンプル動画プレーヤー管理画面';
+
+$string['enable_autoload'] = '自動的に動画を再生させる';
+$string['enable_autoload_help'] = '生徒がページを開いたら動画が自動的に再生されるようにします。';
+
+$string['enable_controler'] = 'シークバーを表示させる';
+$string['enable_controler_help'] = 'シークバーを表示させるか設定できます';
+
 $string['pluginname'] = 'シンプル動画プレーヤー';
