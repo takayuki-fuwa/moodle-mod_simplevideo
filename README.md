@@ -1,6 +1,13 @@
 # Simple Video Player for Moodle
 ストリーミング動画を再生させるプラグイン(mod)です。
 
+# インストール方法
+
+1. 次のURL(https://github.com/yuesan/moodle-mod_simplevideo/releases)の「Source code (zip)」から最新版をダウンロード
+2. 一度解凍し、フォルダ名を「moodle-mod_simplevideo-0.1」から「simplevideo」に変更し、再度zipファイルに圧縮し、Moodleの管理画面からインストールする。
+3. もしくは、「simplevideo」に変更したフォルダをお使いのMoodleの"mod"ディレクトリにアップロードする
+
+
 # License
 このプラグインのライセンスは、GNU GENERAL PUBLIC LICENSE Version 3 です。
 
