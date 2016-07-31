@@ -2,12 +2,13 @@
 ストリーミング動画を再生させるプラグイン(mod)です。
 
 # License
-GNU GENERAL PUBLIC LICENSE Version 3
+このプラグインのライセンスは、GNU GENERAL PUBLIC LICENSE Version 3 です。
+
+また、本プラグインは次のオープンソースソフトウェアを使用しています。
 
 ## Moodle
 GNU GENERAL PUBLIC LICENSE Version 3
 
-本プラグインは、次のオープンソースソフトウェアを使用しています。
 ## video.js
 
 Copyright Brightcove, Inc.
