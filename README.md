@@ -9,6 +9,8 @@
 ## Moodle
 GNU GENERAL PUBLIC LICENSE Version 3
 
+https://docs.moodle.org/dev/License
+
 ## video.js
 
 Copyright Brightcove, Inc.
@@ -24,3 +26,9 @@ Copyright Brightcove, Inc.
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+
+# Author
+不破 崇行(Takayuki Fuwa)
+
+# 不具合などあれば
+GithubのIssuesで投げて下さい。
