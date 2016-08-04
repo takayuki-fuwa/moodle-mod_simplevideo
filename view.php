@@ -63,8 +63,9 @@ $PAGE->set_title(format_string($instance->name));
 $PAGE->set_heading(format_string($course->fullname));
 $PAGE->requires->css(new \moodle_url("css/video-js.min.css"));
 $PAGE->requires->js(new \moodle_url("js/video.min.js"), true);
+$PAGE->requires->js(new \moodle_url("js/videojs-contrib-media-sources.min.js"), true);
 $PAGE->requires->js(new \moodle_url("js/videojs-contrib-hls.min.js"), true);
-//$PAGE->requires->js(new \moodle_url("js/video_main.js"));
+//$PAGE->requires->js(new \moodle_url("js/mux-mp4.min.js"), true);
 
 echo $OUTPUT->header();
 

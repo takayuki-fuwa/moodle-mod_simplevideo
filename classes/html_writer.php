@@ -16,7 +16,7 @@ class html_writer extends \html_writer
         preg_match('/(.*)(?:\.([^.]+$))/', $url->get_path(), $preg_url);
 
         if ($preg_url) {
-            switch ($url->get_scheme()) {
+            switch ($preg_url[2]) {
                 case "rtmp" :
                     $video_type = "rtmp/mp4";
                     break;
