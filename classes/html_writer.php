@@ -55,8 +55,10 @@ var player = videojs("simplevideo_player", {
     loop: false,
     "width": 640,
     "height": 480,
-    plugins: {}
+    plugins: {},
+    hls: {withCredentials: false},
 });
+
 JS;
         $html .= html_writer::script($js, null);
 
