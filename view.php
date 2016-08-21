@@ -64,7 +64,9 @@ $PAGE->set_heading(format_string($course->fullname));
 $PAGE->requires->css(new \moodle_url("css/video-js.min.css"));
 $PAGE->requires->js(new \moodle_url("js/video.min.js"), true);
 //$PAGE->requires->js(new \moodle_url("js/videojs-contrib-media-sources.min.js"), true);
+//$PAGE->requires->js(new \moodle_url("js/videojs.flashls.js"), true);
 $PAGE->requires->js(new \moodle_url("js/videojs-contrib-hls.min.js"), true);
+//$PAGE->requires->js(new \moodle_url("js/video_main.js"));
 
 echo $OUTPUT->header();
 
@@ -87,7 +89,8 @@ $videotag_params = [
     "id" => "simplevideo_player",
     "class" => "video-js vjs-default-skin vjs-big-play-centered",
     "data-setup" => '{
-        "playbackRates": [0.5, 1, 1.5, 2]
+        "playbackRates": [0.5, 1, 1.5, 2],
+        "techOrder": ["flash", "html5"]
     }'
 ];
 echo html_writer::start_div("span7 well");

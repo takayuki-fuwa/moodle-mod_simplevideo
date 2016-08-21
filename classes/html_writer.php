@@ -47,7 +47,9 @@ class html_writer extends \html_writer
 
         $js = <<<JS
 videojs.options.flash.swf = "js/video-js.swf";
+//videojs.flashls({swfUrl: "js/video-js.swf"});
 
+videojs.options.flash.swf = "video-js.swf";
 var player = videojs("simplevideo_player", {
     controls: $enable_controls,
     autoplay: $enable_autoload,
@@ -56,8 +58,25 @@ var player = videojs("simplevideo_player", {
     "width": 640,
     "height": 480,
     plugins: {},
-    hls: {withCredentials: false},
+    flash : {
+        hls: {
+            withCredentials: false
+        }
+    },
+    html5 : {
+        hls: {
+            withCredentials: false
+        }
+    }
 });
+
+player.src({
+    src: "$url",
+    type: 'application/x-mpegURL',
+    withCredentials: false
+});
+
+
 
 JS;
         $html .= html_writer::script($js, null);
