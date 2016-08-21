@@ -95,7 +95,7 @@ $videotag_params = [
     "class" => "video-js vjs-default-skin vjs-big-play-centered",
     "data-setup" => '{
         "playbackRates": [0.5, 1, 1.5, 2],
-        "techOrder": ["html5"]
+        "techOrder": ["html5", "flash"]
     }'
 ];
 echo html_writer::start_div("span7 well");
