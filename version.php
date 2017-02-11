@@ -28,9 +28,9 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'mod_simplevideo';
-$plugin->version = 2016070101;
-$plugin->release = 'v0.1';
+$plugin->version = 2017021101;
+$plugin->release = 'v0.6';
 $plugin->requires = 2014051200;
-$plugin->maturity = MATURITY_ALPHA;
+$plugin->maturity = MATURITY_STABLE;
 $plugin->cron = 0;
 $plugin->dependencies = [];
