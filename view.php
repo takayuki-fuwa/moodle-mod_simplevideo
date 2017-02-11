@@ -64,8 +64,6 @@ $PAGE->set_heading(format_string($course->fullname));
 $PAGE->requires->css(new \moodle_url("css/video-js.min.css"));
 $PAGE->requires->jquery();
 $PAGE->requires->js(new \moodle_url("js/video.min.js"), true);
-//$PAGE->requires->js(new \moodle_url("js/videojs-contrib-media-sources.min.js"), true);
-//$PAGE->requires->js(new \moodle_url("js/videojs.flashls.js"), true);
 $PAGE->requires->js(new \moodle_url("js/videojs-contrib-hls.min.js"), true);
 $PAGE->requires->js(new \moodle_url("js/video_main.js"));
 
@@ -92,11 +90,7 @@ if ($instance->intro) {
 //動画プレーヤーを表示させる。
 $videotag_params = [
     "id" => "simplevideo_player",
-    "class" => "video-js vjs-default-skin vjs-big-play-centered",
-    "data-setup" => '{
-        "playbackRates": [0.5, 1, 1.5, 2],
-        "techOrder": ["html5", "flash"]
-    }'
+    "class" => "video-js vjs-default-skin vjs-big-play-centered"
 ];
 echo html_writer::start_div("span7 well");
 echo html_writer::video(new \moodle_url($instance->url), $videotag_params, $instance->enable_autoload, $instance->enable_controler);

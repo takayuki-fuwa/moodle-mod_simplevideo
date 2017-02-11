@@ -63,11 +63,11 @@ class backup_simplevideo_activity_task extends backup_activity_task {
 
         // Link to the list of simplevideos.
         $search = '/('.$base.'\/mod\/simplevideo\/index.php\?id\=)([0-9]+)/';
-        $content = preg_replace($search, '$@simplevideoINDEX*$2@$', $content);
+        $content = preg_replace($search, '$@SIMPLEVIDEOINDEX*$2@$', $content);
 
         // Link to simplevideo view by moduleid.
         $search = '/('.$base.'\/mod\/simplevideo\/view.php\?id\=)([0-9]+)/';
-        $content = preg_replace($search, '$@simplevideoVIEWBYID*$2@$', $content);
+        $content = preg_replace($search, '$@SIMPLEVIDEOVIEWBYID*$2@$', $content);
 
         return $content;
     }

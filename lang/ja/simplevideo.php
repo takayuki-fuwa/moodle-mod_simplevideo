@@ -32,7 +32,6 @@ $string['modulename'] = 'シンプル動画プレーヤー';
 $string['modulenameplural'] = 'シンプル動画プレーヤー';
 $string['modulename_help'] = 'ストリーミング動画を再生させることができます。';
 $string['video_url'] = 'ストリーミング動画のURL';
-$string['simplevideofieldset'] = 'Custom example fieldset';
 $string['simplevideoname'] = 'シンプル動画プレーヤー';
 $string['simplevideoname_help'] = 'ストリーミング動画を再生させることができます。';
 $string['simplevideo'] = 'シンプル動画プレーヤー';

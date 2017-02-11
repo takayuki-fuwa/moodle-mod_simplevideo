@@ -46,10 +46,11 @@ class html_writer extends \html_writer
         $enable_controls = (int)$enable_controls == 1 ? "true" : "false";
 
         $js = <<<JS
-videojs.options.flash.swf = "js/video-js.swf";
-//videojs.flashls({swfUrl: "js/video-js.swf"});
-
 videojs.options.flash.swf = "video-js.swf";
+videojs.options.flash.params = {
+    playbackRates :  [0.5, 1.0, 1.5, 2.0 ,2.5, 3]
+};
+
 var player = videojs("simplevideo_player", {
     controls: $enable_controls,
     autoplay: $enable_autoload,
@@ -60,14 +61,17 @@ var player = videojs("simplevideo_player", {
     plugins: {},
     flash : {
         hls: {
-            withCredentials: false
+            withCredentials: false,
+            playbackRates :  [0.5, 1.0, 1.5, 2.0 ,2.5, 3]
         }
     },
     html5 : {
         hls: {
             withCredentials: false
         }
-    }
+    },
+    techOrder : ["html5", "flash"],
+    playbackRates :  [0.5, 1.0, 1.5, 2.0 ,2.5, 3]
 });
 
 player.src({
@@ -76,11 +80,8 @@ player.src({
     withCredentials: false
 });
 
-
-
 JS;
         $html .= html_writer::script($js, null);
-
         return $html;
     }
 }

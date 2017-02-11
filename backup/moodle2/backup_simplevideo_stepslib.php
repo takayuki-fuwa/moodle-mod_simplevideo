@@ -33,21 +33,25 @@ defined('MOODLE_INTERNAL') || die;
  * @copyright 2016 Takayuki Fuwa <fuwa@kodamari.com>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class backup_simplevideo_activity_structure_step extends backup_activity_structure_step {
+class backup_simplevideo_activity_structure_step extends backup_activity_structure_step
+{
 
     /**
      * Defines the backup structure of the module
      *
      * @return backup_nested_element
      */
-    protected function define_structure() {
+    protected function define_structure()
+    {
 
         // Get know if we are including userinfo.
         $userinfo = $this->get_setting_value('userinfo');
 
         // Define the root element describing the simplevideo instance.
-        $simplevideo = new backup_nested_element('simplevideo', array('id'), array(
-            'name', 'intro', 'introformat', 'grade'));
+        $simplevideo = new backup_nested_element('simplevideo', array('id'),
+            [
+                'name', 'intro', 'introformat', 'grade', 'enable_autoload', 'enable_controler', 'url'
+            ]);
 
         // If we had more elements, we would build the tree here.
 

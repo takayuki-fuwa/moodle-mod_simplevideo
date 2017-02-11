@@ -73,8 +73,8 @@ class restore_simplevideo_activity_task extends restore_activity_task {
     static public function define_decode_rules() {
         $rules = array();
 
-        $rules[] = new restore_decode_rule('simplevideoVIEWBYID', '/mod/simplevideo/view.php?id=$1', 'course_module');
-        $rules[] = new restore_decode_rule('simplevideoINDEX', '/mod/simplevideo/index.php?id=$1', 'course');
+        $rules[] = new restore_decode_rule('SIMPLEVIDEOVIEWBYID', '/mod/simplevideo/view.php?id=$1', 'course_module');
+        $rules[] = new restore_decode_rule('SIMPLEVIDEOINDEX', '/mod/simplevideo/index.php?id=$1', 'course');
 
         return $rules;
 
