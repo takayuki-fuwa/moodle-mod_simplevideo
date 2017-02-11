@@ -37,6 +37,13 @@ class html_writer extends \html_writer
             $video_type = null;
         }
 
+        $ua = $_SERVER['HTTP_USER_AGENT'];
+        if (strstr($ua, 'Trident') || strstr($ua, 'MSIE')) {
+            $tech_order = '["flash", "html5"]';
+        } else {
+            $tech_order = '["html5", "flash"]';
+        }
+
         $html = html_writer::start_tag("video", $params);
         $html .= html_writer::empty_tag("source", ["src" => $url, "type" => $video_type]);
         $html .= html_writer::tag("p", "動画をこの画面で再生する場合、Javascriptを有効にして下さい。", ["class" => "vjs-no-js"]);
@@ -47,9 +54,6 @@ class html_writer extends \html_writer
 
         $js = <<<JS
 videojs.options.flash.swf = "video-js.swf";
-videojs.options.flash.params = {
-    playbackRates :  [0.5, 1.0, 1.5, 2.0 ,2.5, 3]
-};
 
 var player = videojs("simplevideo_player", {
     controls: $enable_controls,
@@ -61,8 +65,7 @@ var player = videojs("simplevideo_player", {
     plugins: {},
     flash : {
         hls: {
-            withCredentials: false,
-            playbackRates :  [0.5, 1.0, 1.5, 2.0 ,2.5, 3]
+            withCredentials: false
         }
     },
     html5 : {
@@ -70,8 +73,8 @@ var player = videojs("simplevideo_player", {
             withCredentials: false
         }
     },
-    techOrder : ["html5", "flash"],
-    playbackRates :  [0.5, 1.0, 1.5, 2.0 ,2.5, 3]
+    playbackRates :  [0.5, 1.0, 1.5, 2.0 ,2.5, 3],
+    techOrder : $tech_order
 });
 
 player.src({
