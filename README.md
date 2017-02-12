@@ -7,7 +7,6 @@
 2. 一度解凍し、フォルダ名を「moodle-mod_simplevideo-0.1」から「simplevideo」に変更し、再度zipファイルに圧縮し、Moodleの管理画面からインストールする。
 3. もしくは、「simplevideo」に変更したフォルダをお使いのMoodleの"mod"ディレクトリにアップロードする
 
-
 # License
 このプラグインのライセンスは、GNU GENERAL PUBLIC LICENSE Version 3 です。
 

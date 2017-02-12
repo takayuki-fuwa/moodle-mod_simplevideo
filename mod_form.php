@@ -48,10 +48,8 @@ class mod_simplevideo_mod_form extends moodleform_mod
 
         $mform = $this->_form;
 
-        // Adding the "general" fieldset, where all the common settings are showed.
         $mform->addElement('header', 'general', get_string('general', 'form'));
 
-        // Adding the standard "name" field.
         $mform->addElement('text', 'name', get_string('simplevideoname', 'simplevideo'), ['size' => '64']);
         if (!empty($CFG->formatstringstriptags)) {
             $mform->setType('name', PARAM_TEXT);
@@ -74,20 +72,16 @@ class mod_simplevideo_mod_form extends moodleform_mod
         $mform->addElement('advcheckbox', 'enable_controler', get_string('enable_controler', "simplevideo"));
         $mform->addHelpButton('enable_controler', 'enable_controler', "simplevideo");
 
-        // Adding the standard "intro" and "introformat" fields.
         if ($CFG->branch >= 29) {
             $this->standard_intro_elements();
         } else {
             $this->add_intro_editor();
         }
 
-        // Add standard grading elements.
         $this->standard_grading_coursemodule_elements();
 
-        // Add standard elements, common to all modules.
         $this->standard_coursemodule_elements();
 
-        // Add standard buttons, common to all modules.
         $this->add_action_buttons();
     }
 }

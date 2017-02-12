@@ -26,13 +26,3 @@
  */
 
 defined('MOODLE_INTERNAL') || die();
-
-/*
- * Does something really useful with the passed things
- *
- * @param array $things
- * @return object
- *function simplevideo_do_something_useful(array $things) {
- *    return new stdClass();
- *}
- */
