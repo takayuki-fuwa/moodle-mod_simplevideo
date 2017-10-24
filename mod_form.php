@@ -58,7 +58,7 @@ class mod_simplevideo_mod_form extends moodleform_mod
         }
 
         $mform->addElement('text', 'url', get_string('video_url', 'simplevideo'), ['size' => '64']);
-        $mform->setType('url', PARAM_URL);
+        $mform->setType('url', PARAM_TEXT);
 
         $mform->addRule('name', null, 'required', null, 'client');
         $mform->addRule('name', get_string('maximumchars', '', 255), 'maxlength', 255, 'client');
@@ -83,5 +83,9 @@ class mod_simplevideo_mod_form extends moodleform_mod
         $this->standard_coursemodule_elements();
 
         $this->add_action_buttons();
+    }
+
+    public function validation($data, $files) {
+        return parent::validation($data, $files);
     }
 }
